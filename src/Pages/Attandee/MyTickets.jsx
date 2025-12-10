@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getMyEvents,downloadTicket } from "../../api/attandee"; 
-import { toast } from "react-toastify";
+
 import { Link } from "react-router-dom";
 
 const handleDownload = async (userId,eventId, title) => {
