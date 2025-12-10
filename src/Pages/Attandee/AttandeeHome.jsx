@@ -25,7 +25,7 @@ const AttendeeHome = () => {
             to="/profile"
             className="flex items-center p-5 bg-gray-100 hover:bg-gray-200 rounded-xl shadow-sm transition"
           >
-            <User className="w-8 h-8 text-indigo-600 mr-4" />
+            {/* <User className="w-8 h-8 text-indigo-600 mr-4" /> */}
             <span className="text-lg font-medium text-gray-700">My Profile</span>
           </Link>
 
