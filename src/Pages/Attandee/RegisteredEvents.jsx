@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getMyEvents, unregisterEvent } from "../../api/attandee";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 
 const RegisteredEvents = () => {
   const [events, setEvents] = useState([]);

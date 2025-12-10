@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getAllEvents, registerEvent,Paymentcheckout } from "../../api/attandee";
-import { toast } from "react-toastify";
+
 
 export default function BrowseEvents() {
   const [events, setEvents] = useState([]);
