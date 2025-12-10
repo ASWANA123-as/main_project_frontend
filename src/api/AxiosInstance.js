@@ -2,7 +2,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE || "https://mainproject-8vc6.onrender.com",
+  baseURL: import.meta.env.VITE_API_BASE || "https://mainproject-8vc6.onrender.com/api",
   withCredentials: false, // using Authorization header, not cookies
 });
 
