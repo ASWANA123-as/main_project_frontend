@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { LogOut, User, Ticket, List, Star, Calendar } from "lucide-react";
+
 
 const AttendeeHome = () => {
   return (
