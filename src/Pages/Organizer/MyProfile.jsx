@@ -140,60 +140,69 @@ export default function MyProfile() {
           )}
 
           {/* Edit Mode */}
-          {editMode && (
-            <form onSubmit={updateProfile} className="space-y-6">
+         {editMode && (
+  <form onSubmit={updateProfile} className="space-y-6">
 
-              <div>
-                <label className="text-sm font-medium">Full Name</label>
-                <input
-                  name="fullname"
-                  value={profile.user_id.name || ""}
-                  onChange={handleInput}
-                  className="w-full p-3 border rounded-lg mt-1 focus:ring-2 focus:ring-blue-400"
-                />
-              </div>
+    {/* FIXED NAME UPDATE */}
+    <div>
+      <label className="text-sm font-medium">Full Name</label>
+      <input
+        value={profile.user_id?.name || ""}
+        onChange={(e) =>
+          setProfile({
+            ...profile,
+            user_id: {
+              ...profile.user_id,
+              name: e.target.value,
+            },
+          })
+        }
+        className="w-full p-3 border rounded-lg mt-1 focus:ring-2 focus:ring-blue-400"
+      />
+    </div>
 
-              <div>
-                <label className="text-sm font-medium">Organization Name</label>
-                <input
-                  name="organization_name"
-                  value={profile?.organization_name|| ""}
-                  onChange={handleInput}
-                  className="w-full p-3 border rounded-lg mt-1 focus:ring-2 focus:ring-blue-400"
-                />
-              </div>
+    <div>
+      <label className="text-sm font-medium">Organization Name</label>
+      <input
+        name="organization_name"
+        value={profile?.organization_name || ""}
+        onChange={handleInput}
+        className="w-full p-3 border rounded-lg mt-1 focus:ring-2 focus:ring-blue-400"
+      />
+    </div>
 
-              <div>
-                <label className="text-sm font-medium">Bio</label>
-                <textarea
-                  name="bio"
-                  value={profile?.bio || ""}
-                  onChange={handleInput}
-                  className="w-full p-3 border rounded-lg mt-1 focus:ring-2 focus:ring-blue-400"
-                  rows="5"
-                />
-              </div>
+    <div>
+      <label className="text-sm font-medium">Bio</label>
+      <textarea
+        name="bio"
+        value={profile?.bio || ""}
+        onChange={handleInput}
+        className="w-full p-3 border rounded-lg mt-1 focus:ring-2 focus:ring-blue-400"
+        rows="5"
+      />
+    </div>
 
-              <div className="flex gap-4">
-                <button
-                  type="submit"
-                  disabled={saving}
-                  className="bg-blue-600 text-white px-4 py-3 rounded-lg hover:bg-blue-700 w-full transition"
-                >
-                  {saving ? "Saving..." : "Save Changes"}
-                </button>
+    <div className="flex gap-4">
+      <button
+        type="submit"
+        disabled={saving}
+        className="bg-blue-600 text-white px-4 py-3 rounded-lg hover:bg-blue-700 w-full transition"
+      >
+        {saving ? "Saving..." : "Save Changes"}
+      </button>
 
-                <button
-                  type="button"
-                  onClick={() => setEditMode(false)}
-                  className="bg-gray-300 text-gray-900 px-4 py-3 rounded-lg w-full hover:bg-gray-400 transition"
-                >
-                  Cancel
-                </button>
-              </div>
+      <button
+        type="button"
+        onClick={() => setEditMode(false)}
+        className="bg-gray-300 text-gray-900 px-4 py-3 rounded-lg w-full hover:bg-gray-400 transition"
+      >
+        Cancel
+      </button>
+    </div>
 
-            </form>
-          )}
+  </form>
+)}
+
 
         </div>
       </div>
