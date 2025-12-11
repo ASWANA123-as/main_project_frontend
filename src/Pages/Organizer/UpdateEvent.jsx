@@ -35,7 +35,7 @@ export default function UpdateEvent() {
     e.preventDefault();
     try {
       await axios.put(`/organizer/event/${eventId}`, event);
-      navigate("/organizer/events"); // redirect to events list
+      navigate("/organizer/myevents"); // redirect to events list
     } catch (err) {
       setError(err.response?.data?.message || "Something went wrong");
     }
