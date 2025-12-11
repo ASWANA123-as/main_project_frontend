@@ -9,7 +9,7 @@ export default function UploadDocs() {
   const submit = async (e) => {
     e.preventDefault();
     const form = new FormData();
-    files.forEach((f) => form.append("documents", f));
+    files.forEach((f) => form.append("document", f));
 
     await uploadDocs(form);
     alert("Documents uploaded successfully!");
