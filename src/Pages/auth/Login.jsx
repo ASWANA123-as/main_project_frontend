@@ -1,4 +1,3 @@
-// src/pages/auth/Login.jsx
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { login as loginApi } from "../../api/auth";
@@ -33,10 +32,19 @@ export default function Login() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      <div className="bg-white p-8 rounded-2xl shadow-md w-full max-w-md">
-        <h2 className="text-2xl font-bold text-center text-gray-700 mb-6">
-          Login to Your Account
+    <div
+      className="min-h-screen bg-cover bg-center bg-no-repeat flex items-center justify-center px-4"
+      style={{
+        backgroundImage:
+          "url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80')",
+      }}
+    >
+      {/* Overlay */}
+      <div className="absolute inset-0  bg-opacity-50"></div>
+
+      <div className="relative bg-white/10 backdrop-blur-md p-10 rounded-2xl shadow-2xl w-full max-w-md border border-white/20">
+        <h2 className="text-3xl font-bold text-center text-white mb-6 drop-shadow">
+          Welcome Back
         </h2>
 
         {error && (
@@ -47,22 +55,22 @@ export default function Login() {
 
         <form onSubmit={submit} className="space-y-4">
           <div>
-            <label className="text-gray-600 text-sm mb-1 block">Email</label>
+            <label className="text-white text-sm mb-1 block">Email</label>
             <input
               type="email"
               placeholder="Enter email"
-              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
+              className="w-full px-4 py-2 border rounded-lg bg-white/70 focus:ring-2 focus:ring-blue-400 focus:outline-none"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
 
           <div>
-            <label className="text-gray-600 text-sm mb-1 block">Password</label>
+            <label className="text-white text-sm mb-1 block">Password</label>
             <input
               type="password"
               placeholder="Enter password"
-              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
+              className="w-full px-4 py-2 border rounded-lg bg-white/70 focus:ring-2 focus:ring-blue-400 focus:outline-none"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
@@ -70,15 +78,15 @@ export default function Login() {
 
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition font-medium"
+            className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition font-medium shadow-lg"
           >
             Login
           </button>
         </form>
 
-        <p className="text-center mt-4 text-gray-600 text-sm">
+        <p className="text-center mt-4 text-white text-sm">
           Don’t have an account?{" "}
-          <a href="/register" className="text-blue-600 hover:underline">
+          <a href="/register" className="text-blue-300 hover:underline">
             Register
           </a>
         </p>

@@ -13,13 +13,14 @@ export default function Register() {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
-  const change = (e) =>
+  const change = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   const submit = async (e) => {
     e.preventDefault();
     try {
-      const res = await registerApi(formData);
+      await registerApi(formData);
       navigate("/login");
     } catch (err) {
       setError(err.response?.data?.message || "Registration failed");
@@ -27,13 +28,28 @@ export default function Register() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
-      <div className="w-full max-w-md bg-white shadow-lg rounded-xl p-8">
+    <div
+      className="min-h-screen bg-cover bg-center bg-no-repeat flex items-center justify-center px-4 relative"
+      style={{
+        backgroundImage:
+          "url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80')",
+      }}
+    >
+      {/* Dark overlay for contrast */}
+      <div className="absolute inset-0  bg-opacity-50"></div>
+
+      {/* Registration Card */}
+      <div className="relative bg-white/10 backdrop-blur-lg border border-white/20 shadow-2xl p-10 rounded-2xl w-full max-w-md">
 
         {/* Title */}
-        <h2 className="text-3xl font-bold text-gray-800 text-center mb-6">
-          Create Account
+        <h2 className="text-3xl font-bold text-white text-center mb-6 drop-shadow">
+          Create Your Account
         </h2>
+
+        {/* Subtitle */}
+        <p className="text-center text-sm text-gray-200 mb-8">
+          Join the platform to explore events, manage your listings, or oversee system operations.
+        </p>
 
         {/* Error message */}
         {error && (
@@ -43,11 +59,12 @@ export default function Register() {
         )}
 
         {/* Form */}
-        <form onSubmit={submit} className="space-y-4">
-          
+        <form onSubmit={submit} className="space-y-5">
+
+          {/* Name */}
           <div>
-            <label className="block text-sm font-medium text-gray-700">
-             Name
+            <label className="block text-sm font-medium text-gray-200 mb-1">
+              Full Name
             </label>
             <input
               type="text"
@@ -55,14 +72,14 @@ export default function Register() {
               value={formData.name}
               onChange={change}
               required
-              className="mt-1 w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
+              placeholder="Enter full name"
+              className="w-full px-4 py-2 border rounded-lg bg-white/80 focus:ring-2 focus:ring-blue-400 focus:outline-none"
             />
           </div>
 
-         
-
+          {/* Email */}
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="block text-sm font-medium text-gray-200 mb-1">
               Email Address
             </label>
             <input
@@ -71,12 +88,14 @@ export default function Register() {
               value={formData.email}
               onChange={change}
               required
-              className="mt-1 w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
+              placeholder="Enter email"
+              className="w-full px-4 py-2 border rounded-lg bg-white/80 focus:ring-2 focus:ring-blue-400 focus:outline-none"
             />
           </div>
 
+          {/* Password */}
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="block text-sm font-medium text-gray-200 mb-1">
               Password
             </label>
             <input
@@ -85,38 +104,40 @@ export default function Register() {
               value={formData.password_hash}
               onChange={change}
               required
-              className="mt-1 w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
+              placeholder="Enter password"
+              className="w-full px-4 py-2 border rounded-lg bg-white/80 focus:ring-2 focus:ring-blue-400 focus:outline-none"
             />
           </div>
 
-          {/* Role selection */}
+          {/* Role Selection */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-gray-200 mb-1">
               Select Role
             </label>
             <select
               name="role"
               value={formData.role}
               onChange={change}
-              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
+              className="w-full px-4 py-2 border bg-white/80 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
             >
-              <option value="attendee">Attendee</option>
-              <option value="organizer">Organizer</option>
-               <option value="admin">Admin</option>
+              <option value="attendee">Attendee – Browse and book events</option>
+              <option value="organizer">Organizer – Create and manage events</option>
+              <option value="admin">Admin – Manage the platform</option>
             </select>
           </div>
 
-          {/* Submit */}
+          {/* Submit Button */}
           <button
             type="submit"
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2.5 rounded-lg font-semibold transition-all"
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2.5 rounded-lg font-semibold transition-all shadow-lg"
           >
             Register
           </button>
 
-          <p className="text-center text-sm text-gray-600 mt-2">
+          {/* Login Redirect */}
+          <p className="text-center text-sm text-gray-200 mt-3">
             Already have an account?{" "}
-            <a href="/login" className="text-blue-600 hover:underline">
+            <a href="/login" className="text-blue-300 hover:underline">
               Login
             </a>
           </p>
