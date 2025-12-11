@@ -109,7 +109,8 @@ export default function MyProfile() {
               <div>
                 <p className="text-sm text-gray-500">Organization Name</p>
                 <p className="text-xl font-semibold text-gray-900 mt-1">
-                  {profile.organization_name|| "Not provided"}
+                  {profile.company_name
+|| "Not provided"}
                 </p>
               </div>
 
@@ -165,7 +166,8 @@ export default function MyProfile() {
       <label className="text-sm font-medium">Organization Name</label>
       <input
         name="organization_name"
-        value={profile?.organization_name || ""}
+        value={profile?.company_name
+ || ""}
         onChange={handleInput}
         className="w-full p-3 border rounded-lg mt-1 focus:ring-2 focus:ring-blue-400"
       />
