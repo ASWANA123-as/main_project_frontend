@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
-import axios from "../../api/AxiosInstance"; // your axios instance with token attached
+import axios from "../../api/AxiosInstance";
 
 export default function MyProfile() {
   const [profile, setProfile] = useState(null);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
+  const [editMode, setEditMode] = useState(false);
 
   const fetchProfile = async () => {
     try {
       const res = await axios.get("/organizer/me");
-      setProfile(res.data.data || res.data.profile || res.data); // adjust to your backend
+      setProfile(res.data.data || res.data.profile || res.data);
     } catch (err) {
       setError(err.response?.data?.message || "Failed to load profile");
     } finally {
@@ -36,6 +37,7 @@ export default function MyProfile() {
       const res = await axios.put("/organizer/update-profile", profile);
       alert("Profile updated successfully");
       setProfile(res.data.organizer || res.data.data);
+      setEditMode(false);
     } catch (err) {
       alert(err.response?.data?.message || "Update failed");
     }
@@ -52,90 +54,142 @@ export default function MyProfile() {
   if (error)
     return (
       <div className="text-center text-red-500 text-lg mt-10">
-        ❌ {error}
+        {error}
       </div>
     );
 
   return (
-    <div className="max-w-3xl mx-auto bg-white shadow-md rounded-xl p-8 mt-8">
-      <h1 className="text-2xl font-bold mb-6 text-gray-800">My Organizer Profile</h1>
+    <div className="max-w-3xl mx-auto mt-10">
 
-      <form onSubmit={updateProfile} className="space-y-6">
+      {/* Profile Card */}
+      <div className="bg-white shadow-lg rounded-xl p-8">
 
-        {/* Full Name */}
-        <div>
-          <label className="text-sm font-medium">Full Name</label>
-          <input
-            type="text"
-            name="fullname"
-            value={profile.fullname || ""}
-            onChange={handleInput}
-            className="w-full p-3 border rounded-lg mt-1"
-            placeholder="Enter your full name"
-          />
+        {/* Header */}
+        <div className="flex items-center justify-between mb-6">
+          <h1 className="text-2xl font-bold text-gray-800">Organizer Profile</h1>
+
+          {!editMode && (
+            <button
+              onClick={() => setEditMode(true)}
+              className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+            >
+              Edit Profile
+            </button>
+          )}
         </div>
 
-        {/* Phone */}
-        <div>
-          <label className="text-sm font-medium">Phone</label>
-          <input
-            type="text"
-            name="phone"
-            value={profile.phone || ""}
-            onChange={handleInput}
-            className="w-full p-3 border rounded-lg mt-1"
-          />
-        </div>
+        {/* Display Mode */}
+        {!editMode && (
+          <div className="grid grid-cols-1 gap-6">
 
-        {/* Organization Name */}
-        <div>
-          <label className="text-sm font-medium">Organization Name</label>
-          <input
-            type="text"
-            name="organization_name"
-            value={profile.organization_name || ""}
-            onChange={handleInput}
-            className="w-full p-3 border rounded-lg mt-1"
-          />
-        </div>
+            <div>
+              <p className="text-sm text-gray-500">Full Name</p>
+              <p className="text-lg font-medium text-gray-800">{profile.fullname || "Not provided"}</p>
+            </div>
 
-        {/* Bio */}
-        <div>
-          <label className="text-sm font-medium">Bio / About</label>
-          <textarea
-            name="bio"
-            value={profile.bio || ""}
-            onChange={handleInput}
-            className="w-full p-3 border rounded-lg mt-1"
-            rows="4"
-            placeholder="Write something about yourself"
-          />
-        </div>
+            <div>
+              <p className="text-sm text-gray-500">Phone</p>
+              <p className="text-lg font-medium text-gray-800">{profile.phone || "Not provided"}</p>
+            </div>
 
-        {/* Status Display */}
-        <div className="mt-3">
-          <p className="text-gray-700 text-sm">Verification Status:</p>
-          <span
-            className={`px-3 py-1 rounded-full text-sm ${
-              profile.verification_status === "approved"
-                ? "bg-green-100 text-green-700"
-                : profile.verification_status === "rejected"
-                ? "bg-red-100 text-red-700"
-                : "bg-yellow-100 text-yellow-700"
-            }`}
-          >
-            {profile.verification_status}
-          </span>
-        </div>
+            <div>
+              <p className="text-sm text-gray-500">Organization Name</p>
+              <p className="text-lg font-medium text-gray-800">
+                {profile.organization_name || "Not provided"}
+              </p>
+            </div>
 
-        <button
-          type="submit"
-          disabled={saving}
-          className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition"
-        >
-          {saving ? "Saving..." : "Update Profile"}
-        </button>
-      </form>
+            <div>
+              <p className="text-sm text-gray-500">Bio</p>
+              <p className="text-gray-800">{profile.bio || "No bio added"}</p>
+            </div>
+
+            {/* Verification Status */}
+            <div>
+              <p className="text-sm text-gray-500">Verification Status</p>
+              <span
+                className={`mt-1 inline-block px-4 py-1 rounded-full text-sm 
+                ${
+                  profile.verification_status === "approved"
+                    ? "bg-green-100 text-green-700"
+                    : profile.verification_status === "rejected"
+                    ? "bg-red-100 text-red-700"
+                    : "bg-yellow-100 text-yellow-700"
+                }`}
+              >
+                {profile.verification_status}
+              </span>
+            </div>
+
+          </div>
+        )}
+
+        {/* Edit Mode */}
+        {editMode && (
+          <form onSubmit={updateProfile} className="space-y-6">
+
+            <div>
+              <label className="text-sm font-medium">Full Name</label>
+              <input
+                name="fullname"
+                value={profile.fullname || ""}
+                onChange={handleInput}
+                className="w-full p-3 border rounded-lg mt-1"
+              />
+            </div>
+
+            <div>
+              <label className="text-sm font-medium">Phone</label>
+              <input
+                name="phone"
+                value={profile.phone || ""}
+                onChange={handleInput}
+                className="w-full p-3 border rounded-lg mt-1"
+              />
+            </div>
+
+            <div>
+              <label className="text-sm font-medium">Organization Name</label>
+              <input
+                name="organization_name"
+                value={profile.organization_name || ""}
+                onChange={handleInput}
+                className="w-full p-3 border rounded-lg mt-1"
+              />
+            </div>
+
+            <div>
+              <label className="text-sm font-medium">Bio</label>
+              <textarea
+                name="bio"
+                value={profile.bio || ""}
+                onChange={handleInput}
+                className="w-full p-3 border rounded-lg mt-1"
+                rows="4"
+              />
+            </div>
+
+            <div className="flex gap-4">
+              <button
+                type="submit"
+                disabled={saving}
+                className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition w-full"
+              >
+                {saving ? "Saving..." : "Save Changes"}
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setEditMode(false)}
+                className="bg-gray-300 text-gray-800 px-4 py-2 rounded-lg w-full hover:bg-gray-400 transition"
+              >
+                Cancel
+              </button>
+            </div>
+
+          </form>
+        )}
+      </div>
     </div>
   );
 }
