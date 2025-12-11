@@ -71,7 +71,7 @@ const SuccessScreen = () => {
       </div>
 
       <button
-        onClick={() => navigate("/organizer/events")}
+        onClick={() => navigate("organizer/dashboard")}
         className="mt-8 bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-700 transition"
       >
         Go to My Events
