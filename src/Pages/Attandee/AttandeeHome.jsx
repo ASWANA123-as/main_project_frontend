@@ -34,7 +34,7 @@ const AttendeeHome = () => {
             to="/attendee/events"
             className="flex items-center p-5 bg-gray-100 hover:bg-gray-200 rounded-xl shadow-sm transition"
           >
-            <Calendar className="w-8 h-8 text-green-600 mr-4" />
+            {/* <Calendar className="w-8 h-8 text-green-600 mr-4" /> */}
             <span className="text-lg font-medium text-gray-700">Browse Events</span>
           </Link>
 
@@ -68,7 +68,7 @@ const AttendeeHome = () => {
             to="/attendee/loyalty"
             className="flex items-center p-5 bg-gray-100 hover:bg-gray-200 rounded-xl shadow-sm transition"
           >
-            <Calendar className="w-8 h-8 text-green-600 mr-4" />
+            {/* <Calendar className="w-8 h-8 text-green-600 mr-4" /> */}
             <span className="text-lg font-medium text-gray-700">Loyalty Points</span>
           </Link>
 

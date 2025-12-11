@@ -2,7 +2,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:8000/api/organizer",
+  baseURL: "https://mainproject-8vc6.onrender.com/api/organizer",
 });
 
 // Attach token automatically

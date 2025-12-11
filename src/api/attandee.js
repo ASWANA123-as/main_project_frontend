@@ -1,10 +1,10 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:8000/api/attendee",
+  baseURL: "https://mainproject-8vc6.onrender.com/api/attendee",
 });
 const APIPayment = axios.create({
-  baseURL: "http://localhost:8000/api/payment",
+  baseURL: "https://mainproject-8vc6.onrender.com/api/payment",
 });
 
 // Add token automatically
