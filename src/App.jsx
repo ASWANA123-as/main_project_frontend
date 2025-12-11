@@ -104,6 +104,14 @@ function App() {
             </ProtectedRoute>
           }
         /> 
+        <Route
+          path="organizer/create-event/organizer/dashboard"
+          element={
+            <ProtectedRoute role="organizer">
+              <OrganizerDashboard />
+            </ProtectedRoute>
+          }
+        /> 
           <Route
           path="organizer/myevents"
           element={
