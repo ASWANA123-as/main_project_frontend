@@ -85,12 +85,13 @@ export default function MyProfile() {
 
             <div>
               <p className="text-sm text-gray-500">Full Name</p>
-              <p className="text-lg font-medium text-gray-800">{profile.fullname || "Not provided"}</p>
+              <p className="text-lg font-medium text-gray-800">{profile.user_id.name || "Not provided"}</p>
             </div>
 
             <div>
-              <p className="text-sm text-gray-500">Phone</p>
-              <p className="text-lg font-medium text-gray-800">{profile.phone || "Not provided"}</p>
+              <p className="text-sm text-gray-500">Total events</p>
+              <p className="text-lg font-medium text-gray-800">{profile.total_events
+ || "Not provided"}</p>
             </div>
 
             <div>
