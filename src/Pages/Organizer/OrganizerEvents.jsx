@@ -80,7 +80,7 @@ export default function OrganizerEvents() {
                 </p>
                 <p>
                   <span className="font-medium">Location:</span>{" "}
-                  {ev.location || "Not specified"}
+                  {ev.venue|| "Not specified"}
                 </p>
               </div>
             </div>
