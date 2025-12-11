@@ -167,7 +167,7 @@ export default function MyProfile() {
                 <label className="text-sm font-medium">Bio</label>
                 <textarea
                   name="bio"
-                  value={profile.Bio || ""}
+                  value={profile.bio || ""}
                   onChange={handleInput}
                   className="w-full p-3 border rounded-lg mt-1 focus:ring-2 focus:ring-blue-400"
                   rows="5"
