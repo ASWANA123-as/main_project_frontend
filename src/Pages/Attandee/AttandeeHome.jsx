@@ -52,7 +52,7 @@ const AttendeeHome = () => {
             to="/attendee/tickets"
             className="flex items-center p-5 bg-gray-100 hover:bg-gray-200 rounded-xl shadow-sm transition"
           >
-            <Ticket className="w-8 h-8 text-red-600 mr-4" />
+            {/* <Ticket className="w-8 h-8 text-red-600 mr-4" /> */}
             <span className="text-lg font-medium text-gray-700">My Tickets</span>
           </Link>
 
@@ -61,7 +61,7 @@ const AttendeeHome = () => {
             to="/attendee/preferences"
             className="flex items-center p-5 bg-gray-100 hover:bg-gray-200 rounded-xl shadow-sm transition"
           >
-            <Star className="w-8 h-8 text-yellow-500 mr-4" />
+            {/* <Star className="w-8 h-8 text-yellow-500 mr-4" /> */}
             <span className="text-lg font-medium text-gray-700">Preferences</span>
           </Link>
            <Link
@@ -77,7 +77,7 @@ const AttendeeHome = () => {
             to="/logout"
             className="flex items-center p-5 bg-gray-100 hover:bg-gray-200 rounded-xl shadow-sm transition"
           >
-            <LogOut className="w-8 h-8 text-gray-600 mr-4" />
+            {/* <LogOut className="w-8 h-8 text-gray-600 mr-4" /> */}
             <span className="text-lg font-medium text-gray-700">Logout</span>
           </Link>
         </div>
