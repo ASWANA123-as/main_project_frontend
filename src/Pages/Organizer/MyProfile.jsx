@@ -11,6 +11,7 @@ export default function MyProfile() {
   const fetchProfile = async () => {
     try {
       const res = await axios.get("/organizer/me");
+      console.log(res.data,'uuu')
       setProfile(res.data.data || res.data.profile || res.data);
     } catch (err) {
       setError(err.response?.data?.message || "Failed to load profile");
