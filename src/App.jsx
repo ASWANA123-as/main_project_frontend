@@ -24,6 +24,8 @@ import MyTickets from "./Pages/Attandee/MyTickets";
 import PreferencesPage from "./Pages/Attandee/PreferencePage";
 import LoyaltyPoints from "./Pages/Attandee/LoyaltyPoints";
 import PaymentSuccess from "./Pages/Attandee/PaymentSuccess";
+import ForgotPassword from "./Pages/auth/ForgotPassword";
+import ResetPassword from "./Pages/auth/ResetPassword";
 
 
 function App() {
@@ -36,6 +38,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/reset-password/:token" element={<ResetPassword />} />
         <Route
             path="/admin/dashboard"
             element={
