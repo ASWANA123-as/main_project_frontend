@@ -48,7 +48,7 @@ const MyProfileAttandee = () => {
 
           {/* Email */}
           <div className="bg-gray-50 p-5 rounded-xl border border-gray-200">
-            <p className="text-gray-500 text-sm">Email Address</p>
+            <p className="text-gray-500 text-sm truncate w-full">Email Address</p>
             <p className="text-xl font-semibold text-gray-900 mt-1">
               {profile.email}
             </p>
