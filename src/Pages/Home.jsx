@@ -22,12 +22,7 @@ export default function HomePage() {
         </p>
 
         <div className="mt-6 flex gap-4">
-          <Link
-            to="/events"
-            className="bg-white text-indigo-600 px-6 py-3 rounded-lg font-medium shadow hover:bg-gray-100"
-          >
-            Explore Events
-          </Link>
+          
           <Link
             to="/register"
             className="bg-indigo-800 px-6 py-3 rounded-lg font-medium shadow hover:bg-indigo-900"
