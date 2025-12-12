@@ -96,7 +96,7 @@ export default function OrganizersList() {
           ))}
         </tbody>
       </table>
-      <Footer/>
+      
     </div>
     </Layout>
    
