@@ -144,6 +144,14 @@ export default function MyProfile() {
                   {profile.verification_status}
                 </span>
               </div>
+              <div className="mt-6">
+  <button
+    onClick={() => navigate("/organizer/upload-docs")}
+    className="bg-purple-600 text-white w-full py-3 rounded-lg text-sm font-medium hover:bg-purple-700 transition"
+  >
+    Upload Verification Documents
+  </button>
+</div>
             </div>
           )}
 
