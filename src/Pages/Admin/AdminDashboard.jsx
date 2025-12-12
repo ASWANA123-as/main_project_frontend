@@ -25,12 +25,20 @@ export default function AdminDashboard() {
 
     <div class="bg-white shadow rounded-xl p-6">
       <h3 class="text-gray-500">Total Organizers</h3>
-      <p class="text-3xl font-bold">{stats?.totalUsers}</p>
+      <p class="text-3xl font-bold">{stats?.totalOrganizers}</p>
     </div>
 
     <div class="bg-white shadow rounded-xl p-6">
       <h3 class="text-gray-500">Pending Verifications</h3>
-      <p class="text-3xl font-bold text-orange-500">{stats?.totalUsers}</p>
+      <p class="text-3xl font-bold text-orange-500">{stats?.pendingOrganizers}</p>
+    </div>
+    <div class="bg-white shadow rounded-xl p-6">
+      <h3 class="text-gray-500">Total events</h3>
+      <p class="text-3xl font-bold text-orange-500">{stats?.totalEvents}</p>
+    </div>
+    <div class="bg-white shadow rounded-xl p-6">
+      <h3 class="text-gray-500">completed events</h3>
+      <p class="text-3xl font-bold text-orange-500">{stats?.completedEvents}</p>
     </div>
   </div>
 
