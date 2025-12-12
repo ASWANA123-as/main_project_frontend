@@ -3,6 +3,10 @@
 html, body, #root {
   height: 100%;
 }
+.dark{
+  background-color: black;
+  color: beige;
+}
 @keyframes scaleFade {
   0% {
     opacity: 0;
