@@ -3,9 +3,30 @@
 html, body, #root {
   height: 100%;
 }
+:root{
+  --bg-color:white;
+  --text-color:Black;
+}
+
 .dark{
-  background-color: black;
-  color: beige;
+  --bg-color:black;
+  --text-color:white;
+}
+
+body{
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+  transition: background 0.3s,color 0.3s;
+}
+
+button{
+  padding: 10px  20px;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color:cadetblue;
+  color: aliceblue;
 }
 @keyframes scaleFade {
   0% {
