@@ -3,15 +3,16 @@
 html, body, #root {
   height: 100%;
 }
-:root{
+/* :root{
   --bg-color:white;
+  --bg-color:rgb(97, 23, 23);
   --text-color:Black;
 }
 
 .dark{
   --bg-color:black;
   --text-color:rgb(246, 11, 11);
-}
+} */
 
 /* body{
   background-color: var(--bg-color);

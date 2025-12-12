@@ -12,7 +12,7 @@ export default function Layout({ children }) {
 
       {/* Theme Toggle Positioned Top-Right */}
       <div className="w-full flex justify-end px-6 py-4">
-        <ThemeToggle />
+        {/* <ThemeToggle /> */}
       </div>
 
       {/* Main Content */}
