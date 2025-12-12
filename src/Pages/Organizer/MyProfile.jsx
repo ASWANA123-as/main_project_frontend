@@ -3,6 +3,7 @@ import axios from "../../api/AxiosInstance";
 
 export default function MyProfile() {
   const [profile, setProfile] = useState(null);
+   const [updatedprofile, setUpdatedProfile] = useState(null);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
@@ -36,7 +37,7 @@ export default function MyProfile() {
     try {
       const res = await axios.put("/organizer/update-profile", profile);
       alert("Profile updated successfully");
-      setProfile(res.data.organizer || res.data.data);
+      setUpdatedProfile(res.data.organizer || res.data.data);
       setEditMode(false);
     } catch (err) {
       alert(err.response?.data?.message || "Update failed");
@@ -98,18 +99,24 @@ export default function MyProfile() {
                   {profile.user_id.name || "Not provided"}
                 </p>
               </div>
+              <div>
+                <p className="text-sm text-gray-500">Verification Docs Provided</p>
+                <p className="text-xl font-semibold text-gray-900 mt-1">
+                  {profile.verification_docs[0].file_name?'yes':'NO' || "Not provided"}
+                </p>
+              </div>
 
               <div>
                 <p className="text-sm text-gray-500">Total Events</p>
                 <p className="text-xl font-semibold text-gray-900 mt-1">
-                  {profile.total_events || 0}
+                  {updatedprofile?updatedprofile.total_events:profile.total_events || 0}
                 </p>
               </div>
 
               <div>
                 <p className="text-sm text-gray-500">Organization Name</p>
                 <p className="text-xl font-semibold text-gray-900 mt-1">
-                  {profile.company_name
+                  {updatedprofile?updatedprofile.company_name:profile.company_name
 || "Not provided"}
                 </p>
               </div>
@@ -117,7 +124,7 @@ export default function MyProfile() {
               <div>
                 <p className="text-sm text-gray-500">Bio</p>
                 <p className="text-gray-800 mt-1 leading-relaxed">
-                  {profile.bio || "No bio added"}
+                  {updatedprofile?updatedprofile.bio:profile.bio || "No bio added"}
                 </p>
               </div>
 
