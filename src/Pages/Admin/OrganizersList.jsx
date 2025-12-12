@@ -55,7 +55,20 @@ export default function OrganizersList() {
               <td className="p-2">{org.user_id?.name}</td>
               <td>{org.user_id?.email}</td>
               <td className="capitalize">{org.verification_status}</td>
-              <td className="p-2">{org.verification_docs[0]?.url?org.verification_docs[0]?.url:'Not uploaded'}</td>
+              <td className="p-2 max-w-[200px] truncate">
+  {org.verification_docs?.[0]?.url ? (
+    <a
+      href={org.verification_docs[0].url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-blue-600 underline"
+    >
+      {org.verification_docs[0].url}
+    </a>
+  ) : (
+    "Not uploaded"
+  )}
+</td>
               <td className="p-2">
                 {org.verification_status === "pending" && (
                   <>
