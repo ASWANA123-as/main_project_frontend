@@ -45,6 +45,7 @@ export default function OrganizersList() {
             <th className="p-2">Name</th>
             <th>Email</th>
             <th>Status</th>
+            <th>Verification Document</th>
             <th className="p-2">Actions</th>
           </tr>
         </thead>
@@ -54,7 +55,7 @@ export default function OrganizersList() {
               <td className="p-2">{org.user_id?.name}</td>
               <td>{org.user_id?.email}</td>
               <td className="capitalize">{org.verification_status}</td>
-
+              <td className="p-2">{org.verification_docs[0].url}</td>
               <td className="p-2">
                 {org.verification_status === "pending" && (
                   <>
