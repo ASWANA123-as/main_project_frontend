@@ -165,7 +165,7 @@ export default function MyProfile() {
     <div>
       <label className="text-sm font-medium">Organization Name</label>
       <input
-        name="organization_name"
+        name="company_name"
         value={profile?.company_name
  || ""}
         onChange={handleInput}
