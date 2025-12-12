@@ -26,11 +26,22 @@ import LoyaltyPoints from "./Pages/Attandee/LoyaltyPoints";
 import PaymentSuccess from "./Pages/Attandee/PaymentSuccess";
 import ForgotPassword from "./Pages/auth/ForgotPassword";
 import ResetPassword from "./Pages/auth/ResetPassword";
-
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
 
 function App() {
+  const { mode } = useSelector((state) => state.theme);
+
+  useEffect(() => {
+    if (mode === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [mode]);
   return (
     <>
+    <div lassName="bg-white dark:bg-gray-900 dark:text-white min-h-screen transition-colors duration-300">
       <Navbar />
 
       <Routes>
@@ -323,6 +334,8 @@ function App() {
           }
         /> */}
       </Routes>
+    </div>
+      
     </>
   );
 }
