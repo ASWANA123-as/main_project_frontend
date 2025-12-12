@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "../../api/AxiosInstance";
+import { useNavigate } from "react-router-dom";
 
 export default function MyProfile() {
+  const navigate = useNavigate();
   const [profile, setProfile] = useState(null);
    const [updatedprofile, setUpdatedProfile] = useState(null);
   const [loading, setLoading] = useState(true);
