@@ -34,11 +34,11 @@ export default function AdminDashboard() {
     </div>
     <div class="bg-white shadow rounded-xl p-6">
       <h3 class="text-gray-500">Total events</h3>
-      <p class="text-3xl font-bold text-orange-500">{stats?.totalEvents}</p>
+      <p class="text-3xl font-bold ">{stats?.totalEvents}</p>
     </div>
     <div class="bg-white shadow rounded-xl p-6">
       <h3 class="text-gray-500">completed events</h3>
-      <p class="text-3xl font-bold text-orange-500">{stats?.completedEvents}</p>
+      <p class="text-3xl font-bold text-green-500">{stats?.completedEvents}</p>
     </div>
   </div>
 
