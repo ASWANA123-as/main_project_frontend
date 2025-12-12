@@ -10,24 +10,24 @@ html, body, #root {
 
 .dark{
   --bg-color:black;
-  --text-color:white;
+  --text-color:rgb(246, 11, 11);
 }
 
-body{
+/* body{
   background-color: var(--bg-color);
   color: var(--text-color);
   font-family: 'Courier New', Courier, monospace;
   margin: 0;
   transition: background 0.3s,color 0.3s;
-}
+} */
 
-button{
+/* button{
   padding: 10px  20px;
   cursor: pointer;
   border-radius: 5px;
   background-color:cadetblue;
   color: aliceblue;
-}
+} */
 @keyframes scaleFade {
   0% {
     opacity: 0;
