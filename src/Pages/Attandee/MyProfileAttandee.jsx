@@ -12,7 +12,7 @@ const MyProfileAttandee = () => {
 
   if (!profile) {
     return (
-      <div className="flex justify-center items-center h-screen">
+      <div className="flex justify-center items-center h-screen bg-gray-100">
         <div className="text-xl font-semibold text-gray-600 animate-pulse">
           Loading profile...
         </div>
@@ -21,30 +21,43 @@ const MyProfileAttandee = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 flex justify-center py-10 px-4">
-      <div className="bg-white shadow-xl rounded-2xl p-8 w-full max-w-lg">
-        
+    <div className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 flex justify-center py-12 px-4">
+      <div className="bg-white shadow-2xl rounded-3xl p-10 w-full max-w-xl border border-gray-100">
+
         {/* Header */}
-        <div className="text-center mb-6">
-          <h1 className="text-3xl font-bold text-gray-800">My Profile</h1>
-          <p className="text-gray-500 mt-1">Attendee Dashboard</p>
+        <div className="text-center mb-10">
+          <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center text-4xl font-bold">
+            {profile.name?.charAt(0)}
+          </div>
+          <h1 className="text-3xl font-extrabold text-gray-900">My Profile</h1>
+          <p className="text-gray-500 mt-1 tracking-wide">
+            Attendee Information Summary
+          </p>
         </div>
 
-        {/* Profile info */}
-        <div className="space-y-4">
-          <div>
-            <p className="text-gray-500 text-sm">Name</p>
-            <p className="text-lg font-semibold text-gray-800">{profile.name}</p>
+        {/* Profile Card */}
+        <div className="space-y-6">
+
+          {/* Name */}
+          <div className="bg-gray-50 p-5 rounded-xl border border-gray-200">
+            <p className="text-gray-500 text-sm">Full Name</p>
+            <p className="text-xl font-semibold text-gray-900 mt-1">
+              {profile.name}
+            </p>
           </div>
 
-          <div>
-            <p className="text-gray-500 text-sm">Email</p>
-            <p className="text-lg font-semibold text-gray-800">{profile.email}</p>
+          {/* Email */}
+          <div className="bg-gray-50 p-5 rounded-xl border border-gray-200">
+            <p className="text-gray-500 text-sm">Email Address</p>
+            <p className="text-xl font-semibold text-gray-900 mt-1">
+              {profile.email}
+            </p>
           </div>
 
-          <div>
-            <p className="text-gray-500 text-sm">Preferences</p>
-            <p className="text-lg font-semibold text-gray-800">
+          {/* Preferences */}
+          <div className="bg-gray-50 p-5 rounded-xl border border-gray-200">
+            <p className="text-gray-500 text-sm">Event Preferences</p>
+            <p className="text-lg font-medium text-gray-800 mt-1">
               {profile.preferences?.length > 0
                 ? profile.preferences.join(", ")
                 : "No preferences added"}
@@ -52,12 +65,6 @@ const MyProfileAttandee = () => {
           </div>
         </div>
 
-        {/* Button */}
-        <div className="mt-8">
-          <button className="w-full bg-blue-600 hover:bg-blue-700 transition text-white py-3 rounded-xl font-semibold">
-            Edit Profile
-          </button>
-        </div>
       </div>
     </div>
   );
