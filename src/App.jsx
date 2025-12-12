@@ -41,7 +41,7 @@ function App() {
   }, [mode]);
   return (
     <>
-    <div lassName="bg-white dark:bg-gray-900 dark:text-white min-h-screen transition-colors duration-300">
+    <div className="bg-white dark:bg-gray-900 dark:text-white min-h-screen transition-colors duration-300">
       <Navbar />
 
       <Routes>
