@@ -6,7 +6,7 @@ const MyProfileAttandee = () => {
 
   useEffect(() => {
     getMyProfileAttandee().then((res) => {
-      setProfile(res.data.user_id);
+      setProfile(res.data);
     });
   }, []);
 
@@ -42,7 +42,7 @@ const MyProfileAttandee = () => {
           <div className="bg-gray-50 p-5 rounded-xl border border-gray-200">
             <p className="text-gray-500 text-sm">Full Name</p>
             <p className="text-xl font-semibold text-gray-900 mt-1">
-              {profile.name}
+              {profile.user_id.name}
             </p>
           </div>
 
@@ -50,7 +50,7 @@ const MyProfileAttandee = () => {
           <div className="bg-gray-50 p-5 rounded-xl border border-gray-200">
             <p className="text-gray-500 text-sm truncate w-full">Email Address</p>
             <p className="text-xl font-semibold text-gray-900 truncate w-full mt-1">
-              {profile.email}
+              {profile.user_id.email}
             </p>
           </div>
 
