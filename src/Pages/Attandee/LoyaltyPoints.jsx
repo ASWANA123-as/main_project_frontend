@@ -30,6 +30,7 @@ const LoyaltyPoints = () => {
       const res = await addLoyaltyPoints({ points: pointsToAdd });
       toast.success("Points added successfully!");
       setPoints(res.data.points);
+      loadPoints();
     } catch (err) {
       toast.error("Error adding points");
     } finally {
