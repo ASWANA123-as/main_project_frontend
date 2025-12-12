@@ -63,6 +63,12 @@ const MyProfileAttandee = () => {
                 : "No preferences added"}
             </p>
           </div>
+          <div className="bg-gray-50 p-5 rounded-xl border border-gray-200">
+            <p className="text-gray-500 text-sm truncate w-full">Loyalty points</p>
+            <p className="text-xl font-semibold text-gray-900 truncate w-full mt-1">
+              {profile.loyalty_points}
+            </p>
+          </div>
         </div>
 
       </div>
