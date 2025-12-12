@@ -35,6 +35,7 @@ const LoyaltyPoints = () => {
       toast.error("Error adding points");
     } finally {
       setAdding(false);
+      loadPoints();
     }
   };
 
