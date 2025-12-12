@@ -20,17 +20,17 @@ export default function AdminDashboard() {
   <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
     <div class="bg-white shadow rounded-xl p-6">
       <h3 class="text-gray-500">Total Users</h3>
-      <p class="text-3xl font-bold">29</p>
+      <p class="text-3xl font-bold">{stats?.totalUsers}</p>
     </div>
 
     <div class="bg-white shadow rounded-xl p-6">
       <h3 class="text-gray-500">Total Organizers</h3>
-      <p class="text-3xl font-bold">7</p>
+      <p class="text-3xl font-bold">{stats?.totalUsers}</p>
     </div>
 
     <div class="bg-white shadow rounded-xl p-6">
       <h3 class="text-gray-500">Pending Verifications</h3>
-      <p class="text-3xl font-bold text-orange-500">1</p>
+      <p class="text-3xl font-bold text-orange-500">{stats?.totalUsers}</p>
     </div>
   </div>
 
