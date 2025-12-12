@@ -6,7 +6,13 @@ export default function HomePage() {
      
 
       {/* HERO SECTION */}
-      <header className="flex flex-col items-center justify-center text-center p-10 bg-gradient-to-br from-indigo-600 to-purple-600 text-white flex-1">
+      <header  className="relative w-full flex flex-col items-center justify-center text-center p-10 text-white flex-1"
+  style={{
+    backgroundImage: "url('https://wallpaperaccess.com/full/11122273.png')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+  }}>
         <h2 className="text-4xl md:text-5xl font-extrabold leading-tight max-w-3xl">
           Discover, Register, and Experience Amazing Events
         </h2>
