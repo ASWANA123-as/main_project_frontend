@@ -146,21 +146,13 @@ export default function MyProfile() {
 
     {/* FIXED NAME UPDATE */}
     <div>
-      <label className="text-sm font-medium">Full Name</label>
-      <input
-        value={profile.user_id?.name || ""}
-        onChange={(e) =>
-          setProfile({
-            ...profile,
-            user_id: {
-              ...profile.user_id,
-              name: e.target.value,
-            },
-          })
-        }
-        className="w-full p-3 border rounded-lg mt-1 focus:ring-2 focus:ring-blue-400"
-      />
-    </div>
+  <label className="text-sm font-medium">Full Name</label>
+  <input
+    value={profile.user_id?.name || ""}
+    disabled
+    className="w-full p-3 border rounded-lg mt-1 bg-gray-100 text-gray-500 cursor-not-allowed focus:ring-0"
+  />
+</div>
 
     <div>
       <label className="text-sm font-medium">Organization Name</label>
