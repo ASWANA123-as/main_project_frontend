@@ -65,7 +65,7 @@ const MyTickets = () => {
           <h3 className="text-xl font-semibold text-gray-700">No Tickets Found</h3>
           <p className="text-gray-500 mt-2">You haven’t registered for any event yet.</p>
           <Link
-            to="/attendee/browse-events"
+            to="/attendee/events"
             className="inline-block mt-5 px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
           >
             Browse Events
