@@ -56,7 +56,7 @@ const MyProfileAttandee = () => {
 
           {/* Preferences */}
           <div className="bg-gray-50 p-5 rounded-xl border border-gray-200">
-            <p className="text-gray-500 text-sm">Event Preferences</p>
+            <p className="text-gray-500 text-sm truncate w-full">Event Preferences</p>
             <p className="text-lg font-medium text-gray-800 mt-1">
               {profile.preferences?.length > 0
                 ? profile.preferences.join(", ")
