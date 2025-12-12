@@ -104,7 +104,7 @@ export default function MyProfile() {
               <div>
                 <p className="text-sm text-gray-500">Verification Docs Provided</p>
                 <p className="text-xl font-semibold text-gray-900 mt-1">
-                  {profile.verification_docs[0].file_name?'yes':'NO' || "Not provided"}
+                  {profile.verification_docs[0]?.file_name?'yes':'NO' || "Not provided"}
                 </p>
               </div>
 
