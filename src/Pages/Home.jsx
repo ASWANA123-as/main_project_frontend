@@ -65,7 +65,7 @@ export default function HomePage() {
       {/* FOOTER */}
       <footer className="bg-white py-6 shadow-inner mt-auto">
         <div className="max-w-7xl mx-auto text-center text-gray-600">
-          © {new Date().getFullYear()} EventHub. All rights reserved.
+          © {new Date().getFullYear()} EventPro. All rights reserved.
         </div>
       </footer>
     </div>

@@ -14,22 +14,14 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Navigation */}
-        <div>
-          <h3 className="text-lg font-semibold text-white mb-3">Quick Links</h3>
-          <ul className="space-y-2">
-            <li><Link to="/" className="hover:text-white">Home</Link></li>
-            <li><Link to="/browse-events" className="hover:text-white">Events</Link></li>
-            <li><Link to="/my-registrations" className="hover:text-white">My Registrations</Link></li>
-            <li><Link to="/contact" className="hover:text-white">Contact</Link></li>
-          </ul>
-        </div>
+      
+      
 
         {/* Contact */}
         <div>
           <h3 className="text-lg font-semibold text-white mb-3">Contact Us</h3>
           <p>Email: support@eventpro.com</p>
-          <p className="mt-2">Phone: +1 234 567 890</p>
+          <p className="mt-2">Phone: +91 234 567 890</p>
           <p className="mt-2">Address: 123 Event Lane, Tech City</p>
         </div>
       </div>
